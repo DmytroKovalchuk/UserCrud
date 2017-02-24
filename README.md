@@ -10,11 +10,16 @@ Have single JSP page dashbord;
 
 To run project:
 
-Download git repository.
+1)Download git repository.
 
-Open cmd.exe. Change directory to repository dir (where pom.xml is situated)
+2)Create PostgreSQL database name "delete", table name "UserCrud";
 
-Installed maven and tomcat required.
+3)In Intellij IDEA run command "mvn install";
 
-Open browser on page http://localhost:8080/
+4)In configuration manu add TomCat server to your project and artifactid;
+
+5)Run tomcat server, open browser on http://localhost:8080/;
+
+
+
 
