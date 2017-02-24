@@ -1,4 +1,5 @@
-CRUDSpring
+CRUD
+
 My sparring project, to test using of simple technologies.
 
 Technology used: Simple Spring + Hibernate + JPA + Maven + Servlet;
