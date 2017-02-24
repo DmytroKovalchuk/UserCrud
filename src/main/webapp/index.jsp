@@ -13,7 +13,7 @@
 <body>
 <h3>UserCrud present</h3>
 <br/>
-<a href="users" target="_blank"><h1>Users list</h1></a>
+<a href="/users" target="_blank">Users list</a>
 <br/>
 </body>
 </html>

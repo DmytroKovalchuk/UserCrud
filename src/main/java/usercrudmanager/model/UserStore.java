@@ -13,7 +13,7 @@ public class UserStore {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "age")
+    @Column(name = "userAge")
     private int age;
 
     @Column(name = "userName")

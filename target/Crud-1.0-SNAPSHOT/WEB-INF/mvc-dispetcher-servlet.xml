@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <context:component-scan base-package="usercrudmanager"/>
+
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+    <!--Database information-->
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+    destroy-method="close">
+    <property name="driverClassName" value="org.postgresql.Driver"/>
+        <property name="url" value="jdbc:postgresql://localhost:5432/delete"/>
+        <property name="username" value="postgres"/>
+        <property name="password" value="1"/>
+    </bean>
+
+    <!--Hobernate been definition-->
+    <bean id="hibernate5AnnotatedSessionFactory"
+          class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+          <property name="dataSource" value="dataSource"/>
+          <property name="annotatedClasses">
+                    <list>
+                        <value>usercrudmanager.model.UserStore</value>
+                    </list>
+          </property>
+          <property name="hibernateProperties">
+              <props>
+                  <prop key="hibernate.dialect">org.hibernate.dialect.PostgresPlusDialect</prop>
+                  <prop key="hibernate.show_sql">true</prop>
+              </props>
+          </property>
+    </bean>
+
+    <!--UserStore dao and UserStore service bean-->
+    <bean id="userDao" class="usercrudmanager.dao.UserDaoImpl">
+        <property name="sessionFactory" ref="hibernate5AnnotatedSessionFactory"/>
+    </bean>
+
+    <bean id="userService" class="usercrudmanager.userService.UserServiceImpl">
+        <property name="userDao" ref="userDao"/>
+    </bean>
+
+
+    <context:component-scan base-package="usercrudmanager"/>
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+
+    <bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+        <property name="sessionFactory" ref="hibernate5AnnotatedSessionFactory"/>
+    </bean>
+
+    <mvc:default-servlet-handler/>
+    <mvc:annotation-driven/>
+
+    
+          
+
+
+</beans>

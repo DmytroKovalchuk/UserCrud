@@ -20,14 +20,16 @@
         <setting name="validation-enabled" value="true" />
         <setting name="provider-name" value="" />
         <datasource-mapping>
-          <factory-entry name="hibernate5AnnotatedSessionFactory" value="2efc65c5-e5d6-474a-8a52-22d84ebddabb" />
+          <factory-entry name="hibernate5AnnotatedSessionFactory" value="7915e5bb-2fd4-424d-9a9c-766a786d7483" />
         </datasource-mapping>
         <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/META-INF/persistence.xml" />
       </configuration>
     </facet>
     <facet type="hibernate" name="Hibernate">
       <configuration>
-        <datasource-map />
+        <datasource-map>
+          <unit-entry name="hibernate5AnnotatedSessionFactory" />
+        </datasource-map>
         <naming-strategy-map />
       </configuration>
     </facet>

@@ -7,7 +7,7 @@
     <title>Title</title>
 </head>
 <body>
-<a href="../index.jsp">Back to main manu</a>
+<a href="/index.jsp">Back to main manu</a>
 
 <br/>
 <br/>
