@@ -11,6 +11,6 @@
     <title>Title</title>
 </head>
 <body>
-<h1>SYYYYYYYYKA</h1>
+<h1>Delete complited</h1>
 </body>
 </html>
