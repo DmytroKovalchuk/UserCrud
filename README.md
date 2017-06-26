@@ -16,7 +16,7 @@ To run project:
 
 3)In Intellij IDEA run command "mvn install";
 
-4)In configuration manu add TomCat server to your project and artifactid;
+4)In configuration menu add TomCat server to your project and artifactid;
 
 5)Run tomcat server, open browser on http://localhost:8080/;
 
